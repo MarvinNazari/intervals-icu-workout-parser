@@ -13,85 +13,101 @@
 
 /* Workout Catalog Styles */
 .workout-catalog {
-  margin-top: 1.5rem;
+  margin-top: 0.5rem;
 }
 
 .catalog-filters {
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 .sport-tabs {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
 }
 
 .sport-tab {
-  padding: 0.5rem 1rem;
-  border: 1px solid var(--sl-color-gray-5);
-  background: transparent;
-  color: var(--sl-color-text);
+  padding: 0.625rem 1.25rem;
+  border: none;
+  background: var(--sl-color-gray-6);
+  color: var(--sl-color-gray-2);
   border-radius: 2rem;
   cursor: pointer;
-  font-size: 0.875rem;
+  font-size: 0.9rem;
   font-weight: 500;
-  transition: all 0.15s ease;
+  transition: all 0.2s ease;
 }
 
 .sport-tab:hover {
-  background: var(--sl-color-gray-6);
-  border-color: var(--sl-color-gray-4);
+  background: var(--sl-color-gray-5);
+  color: var(--sl-color-text);
 }
 
 .sport-tab.active {
   background: var(--sl-color-accent);
-  border-color: var(--sl-color-accent);
   color: white;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.35);
 }
 
 .filter-row {
   display: flex;
-  gap: 1rem;
+  gap: 0.75rem;
   flex-wrap: wrap;
 }
 
 .search-input {
   flex: 1;
   min-width: 200px;
-  padding: 0.5rem 1rem;
+  padding: 0.75rem 1rem;
   border: 1px solid var(--sl-color-gray-5);
-  background: var(--sl-color-bg);
+  background: var(--sl-color-gray-6);
   color: var(--sl-color-text);
   border-radius: 0.5rem;
-  font-size: 0.875rem;
+  font-size: 0.9rem;
+}
+
+.search-input::placeholder {
+  color: var(--sl-color-gray-3);
 }
 
 .search-input:focus {
   outline: none;
   border-color: var(--sl-color-accent);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
 }
 
 .type-select {
-  padding: 0.5rem 1rem;
+  padding: 0.75rem 1rem;
+  padding-right: 2.5rem;
   border: 1px solid var(--sl-color-gray-5);
-  background: var(--sl-color-bg);
+  background: var(--sl-color-gray-6);
   color: var(--sl-color-text);
   border-radius: 0.5rem;
-  font-size: 0.875rem;
+  font-size: 0.9rem;
   cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%239ca3af' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+}
+
+.type-select:focus {
+  outline: none;
+  border-color: var(--sl-color-accent);
 }
 
 .workout-count {
   font-size: 0.875rem;
   color: var(--sl-color-gray-3);
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
+  font-weight: 500;
 }
 
 .workout-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 1.25rem;
 }
 
 .workout-card {
@@ -101,48 +117,60 @@
   padding: 1.25rem;
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 0.625rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.workout-card:hover {
+  border-color: var(--sl-color-gray-4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .workout-card-header {
   display: flex;
   gap: 0.5rem;
   flex-wrap: wrap;
+  align-items: center;
 }
 
 .workout-sport-badge {
   display: inline-flex;
   align-items: center;
-  gap: 0.25rem;
-  padding: 0.25rem 0.75rem;
+  gap: 0.375rem;
+  padding: 0.3rem 0.625rem;
   background: var(--sl-color-gray-5);
-  border-radius: 1rem;
-  font-size: 0.75rem;
+  border-radius: 0.375rem;
+  font-size: 0.7rem;
   font-weight: 600;
-  letter-spacing: 0.025em;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 
 .workout-type-badge {
-  padding: 0.25rem 0.5rem;
+  padding: 0.3rem 0.5rem;
   background: var(--sl-color-accent-low);
   color: var(--sl-color-accent-high);
   border-radius: 0.25rem;
-  font-size: 0.75rem;
-  font-weight: 500;
+  font-size: 0.7rem;
+  font-weight: 600;
 }
 
 .workout-title {
-  margin: 0;
-  font-size: 1.125rem;
+  margin: 0.25rem 0 0 0;
+  font-size: 1.1rem;
   font-weight: 600;
   color: var(--sl-color-white);
 }
 
 .workout-description {
   margin: 0;
-  font-size: 0.875rem;
+  font-size: 0.85rem;
   color: var(--sl-color-gray-2);
-  line-height: 1.5;
+  line-height: 1.55;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .workout-content {
@@ -150,14 +178,14 @@
   background: var(--sl-color-bg);
   border: 1px solid var(--sl-color-gray-5);
   border-radius: 0.5rem;
-  padding: 1rem;
-  margin-top: 0.5rem;
+  padding: 0.875rem;
+  margin-top: 0.375rem;
 }
 
 .workout-content pre {
   margin: 0;
-  font-size: 0.8rem;
-  line-height: 1.5;
+  font-size: 0.75rem;
+  line-height: 1.6;
   white-space: pre-wrap;
   font-family: var(--sl-font-mono);
   color: var(--sl-color-gray-2);
@@ -167,42 +195,50 @@
   position: absolute;
   top: 0.5rem;
   right: 0.5rem;
-  padding: 0.25rem 0.75rem;
-  background: var(--sl-color-gray-5);
+  padding: 0.375rem 0.75rem;
+  background: var(--sl-color-accent);
   border: none;
   border-radius: 0.25rem;
-  color: var(--sl-color-text);
-  font-size: 0.75rem;
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 600;
   cursor: pointer;
   transition: all 0.15s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
 }
 
 .copy-button:hover {
-  background: var(--sl-color-gray-4);
+  background: #2563eb;
 }
 
 .copy-button.copied {
   background: #22c55e;
-  color: white;
 }
 
 .workout-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-top: 0.5rem;
+  gap: 0.375rem;
+  margin-top: 0.25rem;
 }
 
 .workout-tag {
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   color: var(--sl-color-gray-3);
+  background: var(--sl-color-gray-5);
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.25rem;
 }
 
 .no-results {
   text-align: center;
-  padding: 3rem;
+  padding: 4rem 2rem;
   color: var(--sl-color-gray-3);
   font-size: 1rem;
+  background: var(--sl-color-gray-6);
+  border-radius: 0.75rem;
+  border: 1px dashed var(--sl-color-gray-5);
 }
 
 /* Responsive adjustments */
@@ -217,5 +253,14 @@
 
   .search-input {
     min-width: 100%;
+  }
+
+  .sport-tabs {
+    gap: 0.5rem;
+  }
+
+  .sport-tab {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
   }
 }
