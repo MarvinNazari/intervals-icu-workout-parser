@@ -1,0 +1,53 @@
+{
+  "name": "intervals-icu-workout-parser",
+  "version": "1.0.0",
+  "description": "Parse and build Intervals.icu workout text format",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest",
+    "test:run": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "lint": "tsc --noEmit",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "intervals",
+    "icu",
+    "workout",
+    "parser",
+    "training",
+    "cycling",
+    "running",
+    "swimming",
+    "triathlon"
+  ],
+  "author": "Marvin Nazari <marvin@wavio.co>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wavio/intervals-icu-workout-parser.git"
+  },
+  "bugs": {
+    "url": "https://github.com/wavio/intervals-icu-workout-parser/issues"
+  },
+  "homepage": "https://github.com/wavio/intervals-icu-workout-parser#readme",
+  "devDependencies": {
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2",
+    "vitest": "^3.0.4"
+  }
+}
