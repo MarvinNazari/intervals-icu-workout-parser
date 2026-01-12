@@ -10,3 +10,212 @@
 .expressive-code pre {
   border-radius: 0.5rem;
 }
+
+/* Workout Catalog Styles */
+.workout-catalog {
+  margin-top: 1.5rem;
+}
+
+.catalog-filters {
+  margin-bottom: 1.5rem;
+}
+
+.sport-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.sport-tab {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--sl-color-gray-5);
+  background: transparent;
+  color: var(--sl-color-text);
+  border-radius: 2rem;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.15s ease;
+}
+
+.sport-tab:hover {
+  background: var(--sl-color-gray-6);
+  border-color: var(--sl-color-gray-4);
+}
+
+.sport-tab.active {
+  background: var(--sl-color-accent);
+  border-color: var(--sl-color-accent);
+  color: white;
+}
+
+.filter-row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.search-input {
+  flex: 1;
+  min-width: 200px;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--sl-color-gray-5);
+  background: var(--sl-color-bg);
+  color: var(--sl-color-text);
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--sl-color-accent);
+}
+
+.type-select {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--sl-color-gray-5);
+  background: var(--sl-color-bg);
+  color: var(--sl-color-text);
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+.workout-count {
+  font-size: 0.875rem;
+  color: var(--sl-color-gray-3);
+  margin-bottom: 1rem;
+}
+
+.workout-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.workout-card {
+  background: var(--sl-color-gray-6);
+  border: 1px solid var(--sl-color-gray-5);
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.workout-card-header {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.workout-sport-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.75rem;
+  background: var(--sl-color-gray-5);
+  border-radius: 1rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.025em;
+}
+
+.workout-type-badge {
+  padding: 0.25rem 0.5rem;
+  background: var(--sl-color-accent-low);
+  color: var(--sl-color-accent-high);
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.workout-title {
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--sl-color-white);
+}
+
+.workout-description {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--sl-color-gray-2);
+  line-height: 1.5;
+}
+
+.workout-content {
+  position: relative;
+  background: var(--sl-color-bg);
+  border: 1px solid var(--sl-color-gray-5);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-top: 0.5rem;
+}
+
+.workout-content pre {
+  margin: 0;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  font-family: var(--sl-font-mono);
+  color: var(--sl-color-gray-2);
+}
+
+.copy-button {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  padding: 0.25rem 0.75rem;
+  background: var(--sl-color-gray-5);
+  border: none;
+  border-radius: 0.25rem;
+  color: var(--sl-color-text);
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.copy-button:hover {
+  background: var(--sl-color-gray-4);
+}
+
+.copy-button.copied {
+  background: #22c55e;
+  color: white;
+}
+
+.workout-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.workout-tag {
+  font-size: 0.75rem;
+  color: var(--sl-color-gray-3);
+}
+
+.no-results {
+  text-align: center;
+  padding: 3rem;
+  color: var(--sl-color-gray-3);
+  font-size: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .workout-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .filter-row {
+    flex-direction: column;
+  }
+
+  .search-input {
+    min-width: 100%;
+  }
+}
