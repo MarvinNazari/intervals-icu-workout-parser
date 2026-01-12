@@ -1,0 +1,71 @@
+---
+title: Intervals.icu Workout Parser
+description: Parse and build Intervals.icu workout text format in TypeScript/JavaScript
+template: splash
+hero:
+  tagline: Parse and build Intervals.icu workout text format with full TypeScript support
+  image:
+    file: ../../assets/houston.webp
+  actions:
+    - text: Get Started
+      link: /intervals-icu-workout-parser/getting-started/introduction/
+      icon: right-arrow
+      variant: primary
+    - text: View on GitHub
+      link: https://github.com/MarvinNazari/intervals-icu-workout-parser
+      icon: external
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+## Features
+
+<CardGrid stagger>
+  <Card title="Parse Workouts" icon="document">
+    Convert Intervals.icu workout text into a structured AST. Extract sections, steps, targets, and cadence.
+  </Card>
+  <Card title="Build Workouts" icon="pencil">
+    Create workouts programmatically with a fluent builder API. Export to Intervals.icu text format.
+  </Card>
+  <Card title="Calculate Metrics" icon="rocket">
+    Compute duration, estimated TSS, and intensity factor when provided with athlete zones.
+  </Card>
+  <Card title="Full TypeScript" icon="seti:typescript">
+    Complete type definitions for all workout structures, targets, and zones.
+  </Card>
+</CardGrid>
+
+## Quick Example
+
+```typescript
+import { parseWorkoutStructure, WorkoutBuilder } from 'intervals-icu-workout-parser'
+
+// Parse existing workout
+const structure = parseWorkoutStructure(`
+Tempo Run
+
+Warm Up
+- 10m Z2 HR
+
+Main Set 3x
+- 10m 85-90% pace
+- 5m Z2 HR
+
+Cool Down
+- 10m Z1 HR
+`)
+
+// Build a new workout
+const workout = new WorkoutBuilder()
+  .title('Sweet Spot')
+  .section('Main Set').repeat(3)
+    .step().time(8).powerRange(88, 94).add()
+    .step().time(4).power(55).add()
+  .buildWorkout()
+```
+
+## Installation
+
+```bash
+npm install intervals-icu-workout-parser
+```
