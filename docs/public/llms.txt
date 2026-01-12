@@ -1,0 +1,77 @@
+# intervals-icu-workout-parser
+
+> TypeScript library for parsing and building Intervals.icu workout text format. Parse workout text into structured AST, build workouts programmatically with a fluent API, and calculate duration/metrics.
+
+## Installation
+
+```bash
+npm install intervals-icu-workout-parser
+```
+
+## API Reference
+
+- [Parsing API](https://marvinnazari.github.io/intervals-icu-workout-parser/api/parsing/): Parse workout text into structured AST using `parseWorkoutStructure()` and `parseWorkout()`
+- [Building API](https://marvinnazari.github.io/intervals-icu-workout-parser/api/building/): Build workouts programmatically with `WorkoutBuilder` fluent API and serialize to text with `serializeWorkout()`
+- [Types](https://marvinnazari.github.io/intervals-icu-workout-parser/api/types/): TypeScript type definitions for WorkoutStructure, WorkoutSection, WorkoutStep, StepDuration, StepTarget, and SportZones
+
+## Quick Start
+
+### Parsing Workouts
+
+```typescript
+import { parseWorkoutStructure } from 'intervals-icu-workout-parser'
+
+const structure = parseWorkoutStructure(`
+Tempo Run
+
+Warmup
+- 10m Z2
+
+Main Set 3x
+- 5m 90% pace
+- 2m Z1
+
+Cooldown
+- 5m Z1
+`)
+
+// Returns WorkoutStructure with title, sections, and steps
+```
+
+### Building Workouts
+
+```typescript
+import { WorkoutBuilder } from 'intervals-icu-workout-parser'
+
+const workout = new WorkoutBuilder()
+  .title('Sweet Spot')
+  .section('Warmup')
+    .step({ minutes: 10 }, { power: { value: 55 } })
+  .section('Main Set', 3)
+    .step({ minutes: 8 }, { power: { min: 88, max: 94 } })
+    .step({ minutes: 4 }, { power: { value: 55 } })
+  .section('Cooldown')
+    .step({ minutes: 5 }, { power: { value: 50 } })
+  .build()
+
+const text = serializeWorkout(workout)
+```
+
+## Format Specification
+
+- [Format Overview](https://marvinnazari.github.io/intervals-icu-workout-parser/spec/overview/): Complete guide to Intervals.icu workout text format structure
+- [Duration Formats](https://marvinnazari.github.io/intervals-icu-workout-parser/spec/duration/): Time (5m, 1h30m), distance (5km, 400m), and lap press durations
+- [Target Formats](https://marvinnazari.github.io/intervals-icu-workout-parser/spec/targets/): Power (%, watts, zones), HR (%, bpm, zones), pace (min/km, zones), cadence
+- [Sections & Repeats](https://marvinnazari.github.io/intervals-icu-workout-parser/spec/sections/): Warmup, Main Set, Cooldown sections with repeat syntax (3x)
+
+## Workout Catalog
+
+- [Cycling Workouts](https://marvinnazari.github.io/intervals-icu-workout-parser/catalog/cycling/): Sweet spot, threshold, VO2max, endurance examples
+- [Running Workouts](https://marvinnazari.github.io/intervals-icu-workout-parser/catalog/running/): Tempo, intervals, long run, fartlek examples
+- [Swimming Workouts](https://marvinnazari.github.io/intervals-icu-workout-parser/catalog/swimming/): CSS, drill sets, sprint training examples
+
+## Links
+
+- [GitHub Repository](https://github.com/MarvinNazari/intervals-icu-workout-parser)
+- [npm Package](https://www.npmjs.com/package/intervals-icu-workout-parser)
+- [Intervals.icu](https://intervals.icu): Training platform this format is designed for
