@@ -49,6 +49,13 @@ console.log(structure.sections.length) // 3
 console.log(calculateDuration(structure)) // 2640 (44 minutes in seconds)
 ```
 
+## LLM Documentation
+
+Machine-readable documentation for AI assistants and code generation tools:
+
+- [llms.txt](/intervals-icu-workout-parser/llms.txt) - Package API overview
+- [llms-spec.txt](/intervals-icu-workout-parser/llms-spec.txt) - Complete workout format specification
+
 ## Next Steps
 
 - [Installation](/intervals-icu-workout-parser/getting-started/installation/) - Add the library to your project

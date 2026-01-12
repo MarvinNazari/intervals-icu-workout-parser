@@ -24,6 +24,13 @@ export default defineConfig({
 					],
 				},
 				{
+					label: 'LLM Documentation',
+					items: [
+						{ label: 'llms.txt', link: '/intervals-icu-workout-parser/llms.txt' },
+						{ label: 'llms-spec.txt', link: '/intervals-icu-workout-parser/llms-spec.txt' },
+					],
+				},
+				{
 					label: 'API Reference',
 					items: [
 						{ label: 'Parsing', slug: 'api/parsing' },
