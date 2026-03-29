@@ -55,6 +55,9 @@ Intervals 5x
 | `XmYs` | `5m30s` | Minutes and seconds |
 | `X:YY` | `5:00` | Minutes:seconds |
 | `X:YY:ZZ` | `1:30:00` | Hours:minutes:seconds |
+| `X'` | `5'` | Minutes (shorthand) |
+| `X'Y"` | `5'30"` | Minutes and seconds (shorthand) |
+| `X"` | `30"` | Seconds (shorthand) |
 
 ### Distance-Based
 
@@ -92,9 +95,12 @@ Step ends when user presses lap button on device.
 |--------|---------|-------------|
 | `X% HR` | `75% HR` | Percentage of max HR or LTHR |
 | `X-Y% HR` | `70-80% HR` | HR range |
+| `X% LTHR` | `95% LTHR` | Percentage of lactate threshold HR |
+| `X-Y% LTHR` | `85-95% LTHR` | LTHR range |
 | `Xbpm` | `145bpm` | Absolute BPM |
 | `X-Ybpm` | `140-150bpm` | BPM range |
 | `ZX HR` | `Z2 HR` | HR zone |
+| `ZX-ZY HR` | `Z2-Z3 HR` | HR zone range |
 
 ### Pace (Running/Swimming)
 
