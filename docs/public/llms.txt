@@ -60,7 +60,7 @@ const text = serializeWorkout(workout)
 ## Format Specification
 
 - [Format Overview](https://marvinnazari.github.io/intervals-icu-workout-parser/spec/overview/): Complete guide to Intervals.icu workout text format structure
-- [Duration Formats](https://marvinnazari.github.io/intervals-icu-workout-parser/spec/duration/): Time (5m, 1h30m), distance (5km, 400m), and lap press durations
+- [Duration Formats](https://marvinnazari.github.io/intervals-icu-workout-parser/spec/duration/): Time (5m, 1h30m), distance (5km, 400mtr), and lap press durations
 - [Target Formats](https://marvinnazari.github.io/intervals-icu-workout-parser/spec/targets/): Power (%, watts, zones), HR (%, bpm, zones), pace (min/km, zones), cadence
 - [Sections & Repeats](https://marvinnazari.github.io/intervals-icu-workout-parser/spec/sections/): Warmup, Main Set, Cooldown sections with repeat syntax (3x)
 
