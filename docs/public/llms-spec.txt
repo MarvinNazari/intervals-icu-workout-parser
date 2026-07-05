@@ -38,8 +38,8 @@ Or with explicit `x`:
 
 ```
 Intervals 5x
-- 400m 110% pace
-- 400m Z1
+- 400mtr 110% pace
+- 400mtr Z1
 ```
 
 ## Duration Formats
@@ -60,10 +60,14 @@ Intervals 5x
 
 | Format | Example | Description |
 |--------|---------|-------------|
-| `Xm` | `400m` | Meters (context-dependent, >200 = meters) |
+| `Xmtr` | `400mtr` | Meters (swimming/running) |
 | `Xkm` | `5km` | Kilometers |
 | `Xmi` | `3mi` | Miles |
-| `Xyd` | `100yd` | Yards (swimming) |
+| `Xyrd` | `100yrd` | Yards (swimming) |
+
+> **Note:** A bare `m` suffix always means **minutes**, never meters — `400m`
+> parses as 400 minutes. For a distance in meters use `mtr` (e.g. `400mtr`)
+> or the explicit `meters`; for yards use `yrd` (e.g. `100yrd`) or `yards`.
 
 ### Lap Press
 
@@ -164,11 +168,11 @@ Cooldown
 
 Warmup
 - 15m Z2 HR
-- 4x 100m strides
+- 4x 100mtr strides
 
 Main Set 5x
-- 800m 105-110% pace
-- 400m Z1 HR
+- 800mtr 105-110% pace
+- 400mtr Z1 HR
 
 Cooldown
 - 10m Z1 HR
@@ -180,14 +184,14 @@ Cooldown
 CSS Training
 
 Warmup
-- 400m Z2 pace
-- 4x 50m 85% pace
+- 400mtr Z2 pace
+- 4x 50mtr 85% pace
 
 Main Set 5x
-- 200m 95% pace 30s rest
+- 200mtr 95% pace 30s rest
 
 Cooldown
-- 200m Z1 pace
+- 200mtr Z1 pace
 ```
 
 ### Cycling - VO2max
@@ -212,8 +216,8 @@ Cooldown
 Rest can be specified after the main target:
 
 ```
-- 200m 95% pace 30s rest
-- 100m Z4 20s rest
+- 200mtr 95% pace 30s rest
+- 100mtr Z4 20s rest
 ```
 
 ## Free Text / Instructions
@@ -222,8 +226,8 @@ Lines without duration/target syntax are treated as instructions:
 
 ```
 Main Set 4x
-- 50m drill
-- 100m Z2 pace
+- 50mtr drill
+- 100mtr Z2 pace
 ```
 
 "drill" is free text instruction, not a target.
@@ -283,7 +287,7 @@ interface StepDuration {
   kind: 'time' | 'distance' | 'lap_press'
   seconds?: number      // for time
   meters?: number       // for distance
-  raw?: string          // original text like "5m" or "400m"
+  raw?: string          // original text like "5m" or "400mtr"
 }
 
 interface StepTarget {

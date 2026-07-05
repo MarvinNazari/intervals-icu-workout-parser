@@ -60,13 +60,14 @@ Duration specifies how long a step lasts, either by time or distance.
 ### Meters
 
 ```
-- 400m 90%     # 400 meters (careful: can conflict with minutes)
+- 400mtr 95%     # 400 meters
 - 400meters 90%  # 400 meters (explicit)
-- 200mtr 95%   # 200 meters
+- 200mtr 95%     # 200 meters
 ```
 
 :::caution
-`400m` could be interpreted as 400 minutes or 400 meters. Use `400meters` or `400mtr` to be explicit about meters.
+A bare `m` suffix means **minutes**, not meters — `400m` parses as 400 minutes.
+Use `mtr` (or the explicit `meters`) for a distance in meters, e.g. `400mtr`.
 :::
 
 ### Yards
